@@ -3,9 +3,6 @@ function HomeCtrl($rootScope, MovieService) {
   // ViewModel
   const vm = this;
 
-  vm.title = 'AngularJS, Gulp, and Browserify! Written with keyboards and love!';
-  vm.number = 1234;
-
   vm.carouselItems = [];
   vm.movies = [];
 
@@ -20,14 +17,13 @@ function HomeCtrl($rootScope, MovieService) {
         vm.carouselItems = r.carrossel;
         vm.movies = r.catalogo;
         $rootScope.$broadcast('appPageLoaded', true);
+        $rootScope.$broadcast('appModelUpdated', r);
       })
   }
 
   function init() {
     fetchData();
   }
-
-
 
   init();
 

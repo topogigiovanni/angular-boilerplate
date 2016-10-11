@@ -1,31 +1,31 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-      <base href="/">
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title ng-bind="pageTitle"></title>
-      <meta name="description" content="Angular exercise">
-      <meta name="viewport" content="width=device-width">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title ng-bind="pageTitle"></title>
+  <meta name="description" content="Angular exercise">
+  <meta name="viewport" content="width=device-width">
 
-      <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-      
-      <div ng-show="!isPageLoaded" class="page-loader">
-        Carregando... <i class=""></i>
-      </div>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
 
-      <div ng-show="isPageLoaded" class="content-wrapper">
+  <div ng-show="!isPageLoaded" class="page-loader">
+    Carregando... <i class=""></i>
+  </div>
 
-        <header>
-          <h1 id="logo">App Logo</h1>
-        </header>
+  <div ng-show="isPageLoaded" class="content-wrapper">
 
-        <div ui-view></div>
-      
-      </div>
+    <header>
+      <h1 id="logo">App Logo</h1>
+    </header>
 
-      <script src="js/main.js"></script>
-  </body>
+    <div ui-view></div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
 </html>

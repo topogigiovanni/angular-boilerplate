@@ -1,1 +1,14 @@
-holla
+<div class="modal-content movie-line-modal">
+  <div class="modal-header clearfix">
+    <button type="button" data-ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"> <i class="glyphicon glyphicon-remove"></i>
+    </button>
+    <h2>{{movie.titulo}}</h2>
+  </div>
+  <div class="modal-body">
+    <img ng-src="{{movie.url}}" alt="{{movie.titulo}}" />
+    <br>
+    <span uib-rating ng-model="movie.estrelas" max="5" read-only="true" ></span>
+    <br>
+    <p>{{movie.descricao}}</p>
+  </div>
+</div>

@@ -10,8 +10,10 @@ function AppMovieLine($uibModal) {
 
       console.log('movies', scope.movie, $uibModal);
 
+      var modalInstance;
+
       function openModal() {
-        $uibModal.open({
+        modalInstance = $uibModal.open({
           templateUrl: 'directives/movie-line-detail.html',
           size: 'lg',
           scope: scope
@@ -22,7 +24,12 @@ function AppMovieLine($uibModal) {
         openModal();
       }
 
+      function close() {
+        modalInstance.close();
+      }
+
       scope.showDetails = showDetails;
+      scope.close = close;
 
     }
 

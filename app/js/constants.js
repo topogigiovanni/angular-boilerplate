@@ -1,6 +1,5 @@
 const AppSettings = {
-  appTitle: 'Example Application',
-  apiUrl: 'http://private-74b50-provaangularjs.apiary-mock.com/movies'
+  appTitle: 'Example App'
 };
 
 export default AppSettings;

@@ -3,12 +3,7 @@
   </div>
   <div class="col-xs-6">
     <br>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Pesquisar filme...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Pesquisar</button>
-      </span>
-    </div>
+    <div app-browsing-search items="home.movies"></div>
   </div>
 </div>
 
@@ -24,15 +19,3 @@
     <div ng-if="home.movies" app-browsing-movies items="home.movies"></div>
   </div>
 </div>
-
-
-<h1 class="heading -large">{{ home.title | ExampleFilter }}</h1>
-
-<h3 class="heading -medium">Here is a fancy number served up courtesy of Angular: <span class="number-example">{{ home.number }}</span></h3>
-
-<img src="images/angular.png" height="100" />
-<img src="images/gulp.png" height="100" />
-<img src="images/browserify.png" height="100" />
-
-<hr/>
-<div example-directive title="WOW!" click-message="You clicked me!">Directive is not loaded.</div>

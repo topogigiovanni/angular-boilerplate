@@ -4,7 +4,7 @@
   <div class="caption">
     <h3>{{movie.titulo}}</h3>
     <p>{{movie.descricao}}</p>
-    <span uib-rating ng-model="movie.estrelas" max="5" read-only="true" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+    <span uib-rating ng-model="movie.estrelas" max="5" read-only="true" ></span>
     <br><br>
     <p><a ng-click="showDetails();" href="#" class="btn btn-default" role="button">Ver detalhes</a></p>
   </div>
