@@ -18,7 +18,6 @@ function OnRun($rootScope, AppSettings) {
   $rootScope.$on('appPageLoaded', (event, isLoaded) => {
     $rootScope.isPageLoaded = isLoaded;
     $rootScope.$apply();
-    console.log('appPageLoaded', isLoaded);
   });
 
 }

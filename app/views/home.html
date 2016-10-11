@@ -1,4 +1,30 @@
-<div app-carousel items="carouselItems"></div>
+<div class="row">
+  <div class="col-xs-6">
+  </div>
+  <div class="col-xs-6">
+    <br>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Pesquisar filme...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Pesquisar</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <br>
+    <div app-carousel items="home.carouselItems"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div ng-if="home.movies" app-browsing-movies items="home.movies"></div>
+  </div>
+</div>
+
 
 <h1 class="heading -large">{{ home.title | ExampleFilter }}</h1>
 

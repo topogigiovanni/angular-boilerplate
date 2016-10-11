@@ -1,4 +1,4 @@
-function HomeCtrl($rootScope, $scope, MovieService) {
+function HomeCtrl($rootScope, MovieService) {
 
   // ViewModel
   const vm = this;
@@ -6,33 +6,34 @@ function HomeCtrl($rootScope, $scope, MovieService) {
   vm.title = 'AngularJS, Gulp, and Browserify! Written with keyboards and love!';
   vm.number = 1234;
 
+  vm.carouselItems = [];
+  vm.movies = [];
+
   function fetchData() {
-  	MovieService
-  		.get()
-  		.then((r) => {
-  			console.log('r', r);
-  			if(!r){
-  				return;
-  			}
-  			$scope.carouselItems = r.carrossel;
-  			$scope.movies = r.catalogo;
-  			console.log('before appPageLoaded');
-  			$rootScope.$broadcast('appPageLoaded', true);
-  		})
+    MovieService
+      .get()
+      .then((r) => {
+        console.log('r', r);
+        if (!r) {
+          return;
+        }
+        vm.carouselItems = r.carrossel;
+        vm.movies = r.catalogo;
+        $rootScope.$broadcast('appPageLoaded', true);
+      })
   }
 
   function init() {
-  	fetchData();
+    fetchData();
   }
 
-  $scope.carouselItems = [];
-  $scope.movies = [];
+
 
   init();
 
 }
 
-HomeCtrl.$inject = ['$rootScope', '$scope', 'MovieService'];
+HomeCtrl.$inject = ['$rootScope', 'MovieService'];
 
 export default {
   name: 'HomeCtrl',

@@ -12,6 +12,12 @@ function declare(directiveMap) {
       return;
     }
 
+    if (item.require && typeof item.require === 'object') {
+      angular.forEach(item.requireds, function(req) {
+        directivesModule.requires.push(req);
+      });
+    }
+
     if (item.fn && typeof item.fn === 'function') {
       directivesModule.directive(item.name, item.fn);
     } else {

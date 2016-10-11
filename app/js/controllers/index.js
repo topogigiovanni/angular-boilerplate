@@ -12,6 +12,12 @@ function declare(controllerMap) {
       return;
     }
 
+    if (item.require && typeof item.require === 'object') {
+      angular.forEach(item.requireds, function(req) {
+        controllersModule.requires.push(req);
+      });
+    }
+
     if (item.fn && typeof item.fn === 'function') {
       controllersModule.controller(item.name, item.fn);
     } else {
