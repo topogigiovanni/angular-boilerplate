@@ -1,6 +1,8 @@
 function OnRun($rootScope, AppSettings) {
   'ngInject';
 
+  $rootScope.isPageLoaded = false;
+
   // change page title based on state
   $rootScope.$on('$stateChangeSuccess', (event, toState) => {
     $rootScope.pageTitle = '';
@@ -11,6 +13,12 @@ function OnRun($rootScope, AppSettings) {
     }
 
     $rootScope.pageTitle += AppSettings.appTitle;
+  });
+
+  $rootScope.$on('appPageLoaded', (event, isLoaded) => {
+    $rootScope.isPageLoaded = isLoaded;
+    $rootScope.$apply();
+    console.log('appPageLoaded', isLoaded);
   });
 
 }

@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js">
   <head>
+      <base href="/">
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <title ng-bind="pageTitle"></title>
@@ -11,11 +12,11 @@
   </head>
   <body>
       
-      <div class="page-loader">
+      <div ng-show="!isPageLoaded" class="page-loader">
         Carregando... <i class=""></i>
       </div>
 
-      <div class="content-wrapper">
+      <div ng-show="isPageLoaded" class="content-wrapper">
 
         <header>
           <h1 id="logo">App Logo</h1>
